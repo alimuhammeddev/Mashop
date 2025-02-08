@@ -15,7 +15,7 @@ import {
   FiDollarSign,
   FiMenu,
 } from "react-icons/fi";
-import Sidebar from "../Components/SideBar";
+import Sidebar from "../Components/Sidebar";
 import AddProduct from "../Components/Cards/AddProduct";
 import AddCustomer from "../Components/Cards/AddCustomer";
 import AddOrder from "../Components/Cards/AddOrder";
