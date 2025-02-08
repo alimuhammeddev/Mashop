@@ -182,7 +182,7 @@ const Dashboard = () => {
             <h1>Copyright 2025 Mashop....All Rights Reserved</h1>
           </div>
           <div>
-            <h1>Developed By Ali Muhammed S.</h1>
+            <h1>Developed and Designed By Ali Muhammed S.</h1>
           </div>
         </div>
       </div>
