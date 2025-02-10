@@ -35,10 +35,11 @@ const Sidebar = ({ active, setActive }) => {
 
       <div
         className={`fixed inset-y-0 left-0 bg-gray-900 text-white w-64 p-5 transform transition-transform duration-300 z-40 
-          ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:h-screen`}
+          ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:h-screen flex flex-col`}
       >
         <h2 className="text-xl font-bold mb-6">Mashop</h2>
-        <ul className="space-y-2">
+
+        <ul className="space-y-2 flex-1">
           {menuItems.map((item) => (
             <li
               key={item.id}
@@ -55,6 +56,14 @@ const Sidebar = ({ active, setActive }) => {
             </li>
           ))}
         </ul>
+
+        {/* Footer Text */}
+        <p className="text-gray-400 text-sm text-center mt-auto">
+          &copy; {new Date().getFullYear()} Mashop. All rights reserved.
+        </p>
+        <p className="text-gray-400 text-sm text-center mt-auto">
+          Developed By Ali Muhammed S.
+        </p>
       </div>
     </>
   );

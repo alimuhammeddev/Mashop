@@ -176,15 +176,6 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex lg:flex-row flex-colx items-center justify-between lg:mt-20 bg-gray-900 p-5 text-white">
-          <div>
-            <h1>Copyright 2025 Mashop....All Rights Reserved</h1>
-          </div>
-          <div>
-            <h1>Developed and Designed By Ali Muhammed S.</h1>
-          </div>
-        </div>
       </div>
     </div>
   );
