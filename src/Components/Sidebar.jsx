@@ -1,18 +1,51 @@
-import { FiUsers, FiBox, FiDollarSign, FiSettings, FiMenu } from "react-icons/fi";
+import {
+  FiUsers,
+  FiBox,
+  FiDollarSign,
+  FiSettings,
+  FiMenu,
+} from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ active, setActive }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuItems = [
-    { id: 1, icon: <MdDashboard size={20} />, title: "Dashboard" },
-    { id: 2, icon: <HiOutlineClipboardList size={20} />, title: "Orders" },
-    { id: 3, icon: <FiBox size={20} />, title: "Products" },
-    { id: 4, icon: <FiUsers size={20} />, title: "Customers" },
-    { id: 5, icon: <FiDollarSign size={20} />, title: "Analytics" },
-    { id: 6, icon: <FiSettings size={20} />, title: "Settings" },
+    {
+      id: 1,
+      icon: <MdDashboard size={20} />,
+      title: "Dashboard",
+      path: "/dashboard",
+    },
+    {
+      id: 2,
+      icon: <HiOutlineClipboardList size={20} />,
+      title: "Orders",
+      path: "/orders",
+    },
+    { id: 3, icon: <FiBox size={20} />, title: "Products", path: "/products" },
+    {
+      id: 4,
+      icon: <FiUsers size={20} />,
+      title: "Customers",
+      path: "/customers",
+    },
+    {
+      id: 5,
+      icon: <FiDollarSign size={20} />,
+      title: "Analytics",
+      path: "/analytics",
+    },
+    {
+      id: 6,
+      icon: <FiSettings size={20} />,
+      title: "Settings",
+      path: "/settings",
+    },
   ];
 
   return (
@@ -35,7 +68,9 @@ const Sidebar = ({ active, setActive }) => {
 
       <div
         className={`fixed inset-y-0 left-0 bg-gray-900 text-white w-64 p-5 transform transition-transform duration-300 z-40 
-          ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:relative md:h-screen flex flex-col`}
+          ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } md:translate-x-0 md:relative md:h-screen flex flex-col`}
       >
         <h2 className="text-xl font-bold mb-6">Mashop</h2>
 
@@ -48,6 +83,7 @@ const Sidebar = ({ active, setActive }) => {
               }`}
               onClick={() => {
                 setActive(item.id);
+                navigate(item.path);
                 setIsOpen(false);
               }}
             >
@@ -57,11 +93,10 @@ const Sidebar = ({ active, setActive }) => {
           ))}
         </ul>
 
-        {/* Footer Text */}
         <p className="text-gray-400 text-sm text-center mt-auto">
           &copy; {new Date().getFullYear()} Mashop. All rights reserved.
         </p>
-        <p className="text-gray-400 text-sm text-center mt-auto">
+        <p className="text-gray-400 text-sm text-center">
           Developed By Ali Muhammed S.
         </p>
       </div>
