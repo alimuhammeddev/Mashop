@@ -4,10 +4,11 @@ import { FiMenu, FiSearch } from "react-icons/fi";
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [active, setActive] = useState(1);
 
   return (
     <div className="flex h-screen bg-gray-100">
-      <Sidebar active={1} setActive={() => {}} isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
+      <Sidebar active={active} setActive={setActive} isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
       <div className="flex-1 flex flex-col">
         <header className="bg-white shadow p-4 flex justify-between items-center">

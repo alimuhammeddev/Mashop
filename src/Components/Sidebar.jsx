@@ -7,7 +7,7 @@ import {
 } from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
 import { HiOutlineClipboardList } from "react-icons/hi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ active, setActive }) => {
@@ -15,38 +15,29 @@ const Sidebar = ({ active, setActive }) => {
   const navigate = useNavigate();
 
   const menuItems = [
-    {
-      id: 1,
-      icon: <MdDashboard size={20} />,
-      title: "Dashboard",
-      path: "/dashboard",
-    },
-    {
-      id: 2,
-      icon: <HiOutlineClipboardList size={20} />,
-      title: "Orders",
-      path: "/orders",
-    },
+    { id: 1, icon: <MdDashboard size={20} />, title: "Dashboard", path: "/dashboard" },
+    { id: 2, icon: <HiOutlineClipboardList size={20} />, title: "Orders", path: "/orders" },
     { id: 3, icon: <FiBox size={20} />, title: "Products", path: "/products" },
-    {
-      id: 4,
-      icon: <FiUsers size={20} />,
-      title: "Customers",
-      path: "/customers",
-    },
-    {
-      id: 5,
-      icon: <FiDollarSign size={20} />,
-      title: "Analytics",
-      path: "/analytics",
-    },
-    {
-      id: 6,
-      icon: <FiSettings size={20} />,
-      title: "Settings",
-      path: "/settings",
-    },
+    { id: 4, icon: <FiUsers size={20} />, title: "Customers", path: "/customers" },
+    { id: 5, icon: <FiDollarSign size={20} />, title: "Analytics", path: "/analytics" },
+    { id: 6, icon: <FiSettings size={20} />, title: "Settings", path: "/settings" },
   ];
+
+  // Load active state from localStorage on mount
+  useEffect(() => {
+    const storedActive = localStorage.getItem("activeMenu");
+    if (storedActive) {
+      setActive(parseInt(storedActive, 10));
+    }
+  }, [setActive]);
+
+  // Function to handle menu click
+  const handleMenuClick = (id, path) => {
+    setActive(id);
+    localStorage.setItem("activeMenu", id); // Save active menu item in localStorage
+    navigate(path);
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -68,9 +59,8 @@ const Sidebar = ({ active, setActive }) => {
 
       <div
         className={`fixed inset-y-0 left-0 bg-gray-900 text-white w-64 p-5 transform transition-transform duration-300 z-40 
-          ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          } md:translate-x-0 md:relative md:h-screen flex flex-col`}
+          ${isOpen ? "translate-x-0" : "-translate-x-full"} 
+          md:translate-x-0 md:relative md:h-screen flex flex-col`}
       >
         <h2 className="text-xl font-bold mb-6">Mashop</h2>
 
@@ -81,11 +71,7 @@ const Sidebar = ({ active, setActive }) => {
               className={`flex items-center p-3 cursor-pointer rounded-lg ${
                 active === item.id ? "bg-blue-500" : "hover:bg-gray-700"
               }`}
-              onClick={() => {
-                setActive(item.id);
-                navigate(item.path);
-                setIsOpen(false);
-              }}
+              onClick={() => handleMenuClick(item.id, item.path)}
             >
               {item.icon}
               <span className="ml-3">{item.title}</span>
