@@ -96,7 +96,7 @@ const Dashboard = () => {
                     <th className="pb-2">Order ID</th>
                     <th className="pb-2">Customer</th>
                     <th className="pb-2">Total</th>
-                    <th className="pb-2">Status</th>
+                    <th className="pb-2">Order Status</th>
                   </tr>
                 </thead>
                 <tbody>
