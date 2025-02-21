@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <Sidebar active={active} setActive={setActive} isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
       <div className="flex-1 flex flex-col">
-        <header className="bg-white shadow p-4 flex justify-between items-center z-50">
+        <header className="bg-white shadow p-4 flex justify-between items-center z-10">
           <button onClick={() => setSidebarOpen(!sidebarOpen)} className="lg:hidden md:hidden p-2 rounded-md bg-gray-200">
             <FiMenu size={24} />
           </button>

@@ -8,61 +8,65 @@ import Analytics from "./Pages/Analytics";
 import Settings from "./Pages/Settings";
 import Dashboard from "./Pages/Dashboard";
 import Orders from "./Pages/Orders";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route
-        path="/dashboard"
-        element={
-          <Layout>
-            <Dashboard />
-          </Layout>
-        }
-      />
-      <Route
-        path="/orders"
-        element={
-          <Layout>
-            <Orders />
-          </Layout>
-        }
-      />
-      <Route
-        path="/products"
-        element={
-          <Layout>
-            <Products />
-          </Layout>
-        }
-      />
-      <Route
-        path="/customers"
-        element={
-          <Layout>
-            <Customers />
-          </Layout>
-        }
-      />
-      <Route
-        path="/analytics"
-        element={
-          <Layout>
-            <Analytics />
-          </Layout>
-        }
-      />
-      <Route
-        path="/settings"
-        element={
-          <Layout>
-            <Settings />
-          </Layout>
-        }
-      />
-    </Routes>
+    <div>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Layout>
+              <Dashboard />
+            </Layout>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <Layout>
+              <Orders />
+            </Layout>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <Layout>
+              <Products />
+            </Layout>
+          }
+        />
+        <Route
+          path="/customers"
+          element={
+            <Layout>
+              <Customers />
+            </Layout>
+          }
+        />
+        <Route
+          path="/analytics"
+          element={
+            <Layout>
+              <Analytics />
+            </Layout>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <Layout>
+              <Settings />
+            </Layout>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 

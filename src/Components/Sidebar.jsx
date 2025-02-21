@@ -7,11 +7,10 @@ import {
 } from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
 import { HiOutlineClipboardList } from "react-icons/hi";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar = ({ active, setActive }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Sidebar = ({ active, setActive, isOpen, setIsOpen }) => {
   const navigate = useNavigate();
 
   const menuItems = [
@@ -41,15 +40,6 @@ const Sidebar = ({ active, setActive }) => {
 
   return (
     <>
-      {!isOpen && (
-        <button
-          className="md:hidden p-3 fixed top-4 left-4 z-50 text-white rounded-full"
-          onClick={() => setIsOpen(true)}
-        >
-          <FiMenu size={20} />
-        </button>
-      )}
-
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"

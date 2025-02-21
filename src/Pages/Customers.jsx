@@ -5,6 +5,7 @@ const Customers = () => {
     { id: 2, name: "Jane Smith", email: "jane@example.com", phone: "+234 987-654-3210" },
     { id: 3, name: "Alice Botson", email: "alice@example.com", phone: "+234 456-789-1234" },
     { id: 4, name: "Aliyu Atiku", email: "atikubobo@example.com", phone: "+234 789-123-4567" },
+    { id: 5, name: "Abdulrazaq Salihu", email: "razsmallboy@example.com", phone: "+234 567-444-7789" },
   ];
 
   return (
