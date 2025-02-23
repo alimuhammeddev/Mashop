@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./Components/ScrollToTop";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import Layout from "./Components/Layout";
@@ -8,11 +9,10 @@ import Analytics from "./Pages/Analytics";
 import Settings from "./Pages/Settings";
 import Dashboard from "./Pages/Dashboard";
 import Orders from "./Pages/Orders";
-import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
-    <div>
+    <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Login />} />
@@ -66,7 +66,7 @@ function App() {
           }
         />
       </Routes>
-    </div>
+    </>
   );
 }
 

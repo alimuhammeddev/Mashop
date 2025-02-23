@@ -25,7 +25,11 @@ const Layout = ({ children }) => {
             />
           </div>
         </header>
-        <div className="p-4 lg:p-6 overflow-auto flex-1">{children}</div>
+        
+        <div id="scrollable-content" className="p-4 lg:p-6 overflow-auto flex-1">
+          {children}
+        </div>
+
       </div>
     </div>
   );

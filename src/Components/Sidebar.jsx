@@ -3,15 +3,15 @@ import {
   FiBox,
   FiDollarSign,
   FiSettings,
-  FiMenu,
 } from "react-icons/fi";
 import { MdDashboard } from "react-icons/md";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Sidebar = ({ active, setActive, isOpen, setIsOpen }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
     { id: 1, icon: <MdDashboard size={20} />, title: "Dashboard", path: "/dashboard" },
@@ -25,15 +25,29 @@ const Sidebar = ({ active, setActive, isOpen, setIsOpen }) => {
   // Load active state from localStorage on mount
   useEffect(() => {
     const storedActive = localStorage.getItem("activeMenu");
+
     if (storedActive) {
       setActive(parseInt(storedActive, 10));
+    } else {
+      // Set Dashboard as default when logging in
+      setActive(1);
+      localStorage.setItem("activeMenu", 1);
     }
   }, [setActive]);
+
+  // Update active state based on URL path (in case user refreshes)
+  useEffect(() => {
+    const currentItem = menuItems.find((item) => item.path === location.pathname);
+    if (currentItem) {
+      setActive(currentItem.id);
+      localStorage.setItem("activeMenu", currentItem.id);
+    }
+  }, [location.pathname, setActive]);
 
   // Function to handle menu click
   const handleMenuClick = (id, path) => {
     setActive(id);
-    localStorage.setItem("activeMenu", id); // Save active menu item in localStorage
+    localStorage.setItem("activeMenu", id);
     navigate(path);
     setIsOpen(false);
   };
