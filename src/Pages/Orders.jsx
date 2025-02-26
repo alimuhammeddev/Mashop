@@ -25,7 +25,7 @@ const Orders = () => {
       time: "4.34pm",
       item: "phone",
       total: "$320.00",
-      status: "Delivered",
+      status: "Completed",
     },
     {
       id: "004",
@@ -61,7 +61,7 @@ const Orders = () => {
       time: "4.34pm",
       item: "phone",
       total: "$320.00",
-      status: "Delivered",
+      status: "Completed",
     },
   ];
 
@@ -129,7 +129,11 @@ const Orders = () => {
                         ? "bg-yellow-500"
                         : order.status === "Shipped"
                         ? "bg-blue-500"
-                        : "bg-green-500"
+                        : order.status === "Completed"
+                        ? "bg-green-500"
+                        : order.status === "New Order"
+                        ? "bg-red-500"
+                        : "bg-gray-500"
                     }`}
                   >
                     {order.status}

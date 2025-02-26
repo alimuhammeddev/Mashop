@@ -1,4 +1,7 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, PieChart, Pie, LineChart, Line, ResponsiveContainer } from 'recharts';
+import { 
+  BarChart, Bar, XAxis, YAxis, Tooltip, Legend, 
+  PieChart, Pie, LineChart, Line, ResponsiveContainer 
+} from 'recharts';
 
 const data = [
   { name: 'Jan', sales: 4000, revenue: 2400 },
@@ -6,6 +9,13 @@ const data = [
   { name: 'Mar', sales: 5000, revenue: 2290 },
   { name: 'Apr', sales: 2780, revenue: 2000 },
   { name: 'May', sales: 1890, revenue: 2181 },
+  { name: 'Jun', sales: 2390, revenue: 2500 },
+  { name: 'Jul', sales: 3490, revenue: 2700 },
+  { name: 'Aug', sales: 4200, revenue: 2900 },
+  { name: 'Sep', sales: 3100, revenue: 2300 },
+  { name: 'Oct', sales: 4000, revenue: 2600 },
+  { name: 'Nov', sales: 3700, revenue: 2800 },
+  { name: 'Dec', sales: 4500, revenue: 3100 },
 ];
 
 const pieData = [
