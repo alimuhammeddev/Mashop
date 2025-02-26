@@ -1,10 +1,11 @@
-import AddOrder from "../Components/Cards/AddOrder";
 const Orders = () => {
   const orders = [
     {
       id: "001",
       customer: "John Doe",
       date: "2024-02-11",
+      time: "4.34pm",
+      item: "phone",
       total: "$250.00",
       status: "Pending",
     },
@@ -12,6 +13,8 @@ const Orders = () => {
       id: "002",
       customer: "Jane Smith",
       date: "2024-02-10",
+      time: "4.34pm",
+      item: "phone",
       total: "$180.00",
       status: "Shipped",
     },
@@ -19,6 +22,8 @@ const Orders = () => {
       id: "003",
       customer: "Michael Brown",
       date: "2024-02-09",
+      time: "4.34pm",
+      item: "phone",
       total: "$320.00",
       status: "Delivered",
     },
@@ -26,6 +31,8 @@ const Orders = () => {
       id: "004",
       customer: "Michael Brown",
       date: "2024-02-09",
+      time: "4.34pm",
+      item: "phone",
       total: "$320.00",
       status: "Shipped",
     },
@@ -33,13 +40,17 @@ const Orders = () => {
       id: "005",
       customer: "Michael Brown",
       date: "2024-02-09",
+      time: "4.34pm",
+      item: "phone",
       total: "$320.00",
-      status: "Pending",
+      status: "New Order",
     },
     {
       id: "006",
       customer: "Michael Brown",
       date: "2024-02-09",
+      time: "4.34pm",
+      item: "phone",
       total: "$320.00",
       status: "Pending",
     },
@@ -47,6 +58,8 @@ const Orders = () => {
       id: "007",
       customer: "Michael Brown",
       date: "2024-02-09",
+      time: "4.34pm",
+      item: "phone",
       total: "$320.00",
       status: "Delivered",
     },
@@ -70,7 +83,13 @@ const Orders = () => {
                 Order Date
               </th>
               <th className="py-2 px-3 text-left text-xs sm:text-sm md:text-base">
-                Total
+                Order Time
+              </th>
+              <th className="py-2 px-3 text-left text-xs sm:text-sm md:text-base">
+                Item Ordered
+              </th>
+              <th className="py-2 px-3 text-left text-xs sm:text-sm md:text-base">
+                Total Amount
               </th>
               <th className="py-2 px-3 text-left text-xs sm:text-sm md:text-base">
                 Order Status
@@ -95,6 +114,12 @@ const Orders = () => {
                   {order.date}
                 </td>
                 <td className="py-2 px-3 whitespace-nowrap text-xs sm:text-sm md:text-base">
+                  {order.time}
+                </td>
+                <td className="py-2 px-3 whitespace-nowrap text-xs sm:text-sm md:text-base">
+                  {order.item}
+                </td>
+                <td className="py-2 px-3 whitespace-nowrap text-xs sm:text-sm md:text-base">
                   {order.total}
                 </td>
                 <td className="py-2 px-3 font-medium whitespace-nowrap">
@@ -114,10 +139,6 @@ const Orders = () => {
             ))}
           </tbody>
         </table>
-
-        <div className="mt-5 w-fit justify-center flex items-center mx-auto">
-          <AddOrder />
-        </div>
       </div>
     </section>
   );

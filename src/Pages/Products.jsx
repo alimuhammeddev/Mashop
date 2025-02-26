@@ -1,14 +1,14 @@
 import AddProduct from "../Components/Cards/AddProduct";
 const Products = () => {
   const products = [
-    { id: 1, name: "Laptop", category: "Electronics", price: "$1200" },
-    { id: 2, name: "Smartphone", category: "Electronics", price: "$800" },
-    { id: 3, name: "Headphones", category: "Accessories", price: "$150" },
-    { id: 4, name: "Shoes", category: "Fashion", price: "$100" },
-    { id: 5, name: "Trouser", category: "Fashion", price: "$600" },
-    { id: 6, name: "Plate", category: "Utensils", price: "$70" },
-    { id: 6, name: "Shirt", category: "Fashion", price: "$50" },
-    { id: 7, name: "Medicated Glasses", category: "Health", price: "$500" },   
+    { id: 1, name: "Laptop", category: "Electronics", description: "lorem", price: "$1200" },
+    { id: 2, name: "Smartphone", category: "Electronics", description: "lorem", price: "$800" },
+    { id: 3, name: "Headphones", category: "Accessories", description: "lorem", price: "$150" },
+    { id: 4, name: "Shoes", category: "Fashion", description: "lorem", price: "$100" },
+    { id: 5, name: "Trouser", category: "Fashion", description: "lorem", price: "$600" },
+    { id: 6, name: "Plate", category: "Utensils", description: "lorem", price: "$70" },
+    { id: 6, name: "Shirt", category: "Fashion", description: "lorem", price: "$50" },
+    { id: 7, name: "Medicated Glasses", category: "Health", description: "lorem", price: "$500" },   
   ];
 
   return (
@@ -21,6 +21,7 @@ const Products = () => {
               <th className="border border-gray-300 px-4 py-2">Product ID</th>
               <th className="border border-gray-300 px-4 py-2">Product Name</th>
               <th className="border border-gray-300 px-4 py-2">Product Category</th>
+              <th className="border border-gray-300 px-4 py-2">Product Description</th>
               <th className="border border-gray-300 px-4 py-2">Product Price</th>
             </tr>
           </thead>
@@ -30,6 +31,7 @@ const Products = () => {
                 <td className="border border-gray-300 px-4 py-2">{product.id}</td>
                 <td className="border border-gray-300 px-4 py-2">{product.name}</td>
                 <td className="border border-gray-300 px-4 py-2">{product.category}</td>
+                <td className="border border-gray-300 px-4 py-2">{product.description}</td>
                 <td className="border border-gray-300 px-4 py-2">{product.price}</td>
               </tr>
             ))}

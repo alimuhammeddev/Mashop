@@ -56,9 +56,9 @@ const AddOrder = () => {
                   Order Date
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
-                  placeholder="Enter oder date"
+                  placeholder="Enter order date"
                   required
                 />
               </div>
@@ -67,9 +67,9 @@ const AddOrder = () => {
                   Order Time
                 </label>
                 <input
-                  type="text"
+                  type="time"
                   className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
-                  placeholder="Enter oder time"
+                  placeholder="Enter order time"
                   required
                 />
               </div>

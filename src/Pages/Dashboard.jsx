@@ -8,8 +8,6 @@ import {
 } from "recharts";
 import { FiShoppingBag, FiUsers, FiBox, FiDollarSign } from "react-icons/fi";
 import AddProduct from "../Components/Cards/AddProduct";
-import AddCustomer from "../Components/Cards/AddCustomer";
-import AddOrder from "../Components/Cards/AddOrder";
 
 const Dashboard = () => {
   const stats = [
@@ -126,15 +124,9 @@ const Dashboard = () => {
           </div>
 
           <div>
-            <div className="flex lg:flex-row flex-col lg:items-center justify-between mt-10 gap-5">
+            <div className="flex lg:flex-row flex-col lg:items-center justify-center mt-10 gap-5">
               <div>
                 <AddProduct />
-              </div>
-              <div>
-                <AddCustomer />
-              </div>
-              <div>
-                <AddOrder />
               </div>
             </div>
           </div>

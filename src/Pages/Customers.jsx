@@ -1,4 +1,3 @@
-import AddCustomer from "../Components/Cards/AddCustomer";
 const Customers = () => {
   const customers = [
     { id: 1, name: "John Park", email: "john@example.com", phone: "+234 123-456-7890" },
@@ -32,10 +31,6 @@ const Customers = () => {
             ))}
           </tbody>
         </table>
-      </div>
-
-      <div className="mt-5 w-fit justify-center flex mx-auto">
-        <AddCustomer />
       </div>
     </div>
   );

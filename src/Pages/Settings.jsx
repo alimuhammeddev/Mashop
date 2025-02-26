@@ -22,11 +22,11 @@ const Settings = () => {
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gray-100 p-6 rounded-lg shadow">
-            <h3 className="text-xl font-medium mb-4">Profile Information</h3>
+            <h3 className="text-xl font-medium mb-4">Business Information</h3>
             <div className="space-y-2">
               <input
                 type="text"
-                placeholder="Full Name"
+                placeholder="Name"
                 className="w-full p-2 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
               />
               <input
@@ -36,7 +36,9 @@ const Settings = () => {
               />
             </div>
 
-            <h3 className="text-xl font-medium mt-6 mb-2">Profile Picture</h3>
+            <h3 className="text-xl font-medium mt-6 mb-2">
+              Business Profile Picture
+            </h3>
             <div className="flex flex-col items-center gap-4">
               <div className="relative w-32 h-32 border-4 border-blue-300 rounded-full overflow-hidden">
                 {image ? (
