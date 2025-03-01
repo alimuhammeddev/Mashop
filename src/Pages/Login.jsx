@@ -11,7 +11,7 @@ const Login = () => {
 
     setTimeout(() => {
       navigate("/dashboard");
-    }, 2000); // Simulating a 2-second delay before navigation
+    }, 2000);
   };
 
   return (

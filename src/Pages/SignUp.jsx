@@ -11,7 +11,7 @@ const SignUp = () => {
 
     setTimeout(() => {
       navigate("/dashboard");
-    }, 2000); // Simulating a delay before navigation
+    }, 2000);
   };
 
   return (
