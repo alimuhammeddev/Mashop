@@ -13,7 +13,11 @@ const Products = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-4 md:text-2xl">List Of Products</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold mb-4 md:text-2xl">List Of Products</h2>
+
+        <AddProduct />
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300">
           <thead>
@@ -37,10 +41,6 @@ const Products = () => {
             ))}
           </tbody>
         </table>
-
-        <div className="w-fit justify-center flex mx-auto mt-5">
-          <AddProduct />
-        </div>
       </div>
     </div>
   );

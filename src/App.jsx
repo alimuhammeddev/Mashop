@@ -9,6 +9,7 @@ import Analytics from "./Pages/Analytics";
 import Settings from "./Pages/Settings";
 import Dashboard from "./Pages/Dashboard";
 import Orders from "./Pages/Orders";
+import Withdrawal from "./Pages/Withdrawal";
 
 function App() {
   return (
@@ -54,6 +55,14 @@ function App() {
           element={
             <Layout>
               <Analytics />
+            </Layout>
+          }
+        />
+        <Route
+          path="/withdraw"
+          element={
+            <Layout>
+              <Withdrawal />
             </Layout>
           }
         />

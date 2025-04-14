@@ -8,6 +8,7 @@ import { MdDashboard } from "react-icons/md";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { FaMoneyBillAlt } from "react-icons/fa";
 
 const Sidebar = ({ active, setActive, isOpen, setIsOpen }) => {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ const Sidebar = ({ active, setActive, isOpen, setIsOpen }) => {
     { id: 3, icon: <FiBox size={20} />, title: "Products", path: "/products" },
     { id: 4, icon: <FiUsers size={20} />, title: "Customers", path: "/customers" },
     { id: 5, icon: <FiDollarSign size={20} />, title: "Analytics", path: "/analytics" },
-    { id: 6, icon: <FiSettings size={20} />, title: "Settings", path: "/settings" },
+    { id: 6, icon: <FaMoneyBillAlt size={20} />, title: "Withdrawal", path: "/withdraw" },
+    { id: 7, icon: <FiSettings size={20} />, title: "Settings", path: "/settings" },
   ];
 
   // Load active state from localStorage on mount

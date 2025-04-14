@@ -9,10 +9,10 @@ const AddProduct = () => {
     <div>
       {/* Card that triggers the popup */}
       <div
-        className="bg-white p-10 flex items-center justify-center gap-2 shadow rounded-md cursor-pointer"
+        className="bg-white p-2 flex items-center justify-center gap-2 shadow rounded-md cursor-pointer mb-5"
         onClick={() => setIsOpen(true)}
       >
-        <BiPlus className="text-3xl bg-blue-500 rounded-full text-white" />
+        <BiPlus className="text-xl bg-blue-500 rounded-full text-white" />
         <h1>Add New Product</h1>
       </div>
 
