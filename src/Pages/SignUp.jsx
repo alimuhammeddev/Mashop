@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaApple, FaFacebook } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -90,6 +92,27 @@ const SignUp = () => {
               )}
             </button>
           </form>
+
+          <div>
+            <div className="flex items-center my-6">
+              <div className="flex-grow border-t border-blue-500"></div>
+              <span className="mx-4 text-blue-500 font-medium">OR</span>
+              <div className="flex-grow border-t border-blue-500"></div>
+            </div>
+
+            <div className="flex justify-center gap-6">
+              <button className="p-3 border border-blue-500 rounded-full hover:bg-gray-100 transition text-2xl">
+                <FcGoogle />
+              </button>
+              <button className="p-3 border border-blue-500 rounded-full hover:bg-gray-100 transition text-blue-600 text-2xl">
+                <FaFacebook />
+              </button>
+              <button className="p-3 border border-blue-500 rounded-full hover:bg-gray-100 transition text-black text-2xl">
+                <FaApple />
+              </button>
+            </div>
+          </div>
+
           <p className="text-sm text-center text-gray-500">
             Already have an account?{" "}
             <a href="/" className="text-blue-500 hover:underline">
