@@ -26,20 +26,14 @@ const SignUp = () => {
           </div>
           <form className="space-y-4" onSubmit={handleSignUp}>
             <div>
-              <label className="block text-sm font-medium text-gray-600">
-                Full Name
-              </label>
               <input
                 type="text"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
-                placeholder="Enter your full name"
+                placeholder="Enter your store name"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-600">
-                Email
-              </label>
               <input
                 type="email"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
@@ -48,35 +42,18 @@ const SignUp = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-600">
-                Username
-              </label>
               <input
                 type="text"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
-                placeholder="Enter your username"
+                placeholder="Enter your store username"
                 required
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-600">
-                Password
-              </label>
               <input
                 type="password"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
                 placeholder="Create a password"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-600">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
-                placeholder="Confirm your password"
                 required
               />
             </div>
