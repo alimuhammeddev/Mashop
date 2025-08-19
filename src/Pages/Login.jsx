@@ -7,7 +7,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({}); // ✅ store errors
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   const validateForm = () => {
@@ -27,7 +27,7 @@ const Login = () => {
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // ✅ no errors → valid
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleLogin = (e) => {

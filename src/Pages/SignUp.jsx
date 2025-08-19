@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({}); // ✅ track validation errors
+  const [errors, setErrors] = useState({}); 
   const navigate = useNavigate();
 
-  // ✅ Email Regex Validator
+  
   const isValidEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -17,7 +17,7 @@ const SignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
     setLoading(true);
-    setErrors({}); // reset errors
+    setErrors({}); 
 
     const formData = new FormData(e.target);
     const storeName = formData.get("storeName").trim();
@@ -27,33 +27,29 @@ const SignUp = () => {
 
     let newErrors = {};
 
-    // ✅ Validate store name
+    
     if (!storeName) newErrors.storeName = "Store name is required";
 
-    // ✅ Validate email
     if (!isValidEmail(email)) newErrors.email = "Please enter a valid email";
 
-    // ✅ Validate username
     if (!username) newErrors.username = "Username is required";
 
-    // ✅ Validate password
     if (password.length < 6)
       newErrors.password = "Password must be at least 6 characters";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       setLoading(false);
-      return; // stop form submit
+      return;
     }
 
     const user = { storeName, email, username, password };
 
-    // Save user in localStorage
     localStorage.setItem("user", JSON.stringify(user));
 
     setTimeout(() => {
       setLoading(false);
-      navigate("/dashboard"); // redirect after signup
+      navigate("/dashboard");
     }, 1500);
   };
 
@@ -132,7 +128,6 @@ const SignUp = () => {
             </button>
           </form>
 
-          {/* OR + social buttons */}
           <div>
             <div className="flex items-center my-6">
               <div className="flex-grow border-t border-blue-500"></div>
