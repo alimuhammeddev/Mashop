@@ -105,7 +105,6 @@ const Login = () => {
             </button>
           </form>
 
-          {/* OR + Social buttons */}
           <div>
             <div className="flex items-center my-6">
               <div className="flex-grow border-t border-blue-500"></div>
