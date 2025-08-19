@@ -5,15 +5,56 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({}); // ✅ track validation errors
   const navigate = useNavigate();
+
+  // ✅ Email Regex Validator
+  const isValidEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
   const handleSignUp = (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrors({}); // reset errors
+
+    const formData = new FormData(e.target);
+    const storeName = formData.get("storeName").trim();
+    const email = formData.get("email").trim();
+    const username = formData.get("username").trim();
+    const password = formData.get("password").trim();
+
+    let newErrors = {};
+
+    // ✅ Validate store name
+    if (!storeName) newErrors.storeName = "Store name is required";
+
+    // ✅ Validate email
+    if (!isValidEmail(email)) newErrors.email = "Please enter a valid email";
+
+    // ✅ Validate username
+    if (!username) newErrors.username = "Username is required";
+
+    // ✅ Validate password
+    if (password.length < 6)
+      newErrors.password = "Password must be at least 6 characters";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      setLoading(false);
+      return; // stop form submit
+    }
+
+    const user = { storeName, email, username, password };
+
+    // Save user in localStorage
+    localStorage.setItem("user", JSON.stringify(user));
 
     setTimeout(() => {
-      navigate("/dashboard");
-    }, 2000);
+      setLoading(false);
+      navigate("/dashboard"); // redirect after signup
+    }, 1500);
   };
 
   return (
@@ -24,39 +65,60 @@ const SignUp = () => {
             <h1 className="text-center text-2xl">New To Mashop?</h1>
             <p className="text-center">Create an account</p>
           </div>
+
           <form className="space-y-4" onSubmit={handleSignUp}>
+            {/* Store Name */}
             <div>
               <input
                 type="text"
+                name="storeName"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
                 placeholder="Enter your store name"
-                required
               />
+              {errors.storeName && (
+                <p className="text-red-500 text-sm mt-1">{errors.storeName}</p>
+              )}
             </div>
+
+            {/* Email */}
             <div>
               <input
                 type="email"
+                name="email"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
                 placeholder="Enter your email"
-                required
               />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
+
+            {/* Username */}
             <div>
               <input
                 type="text"
+                name="username"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
                 placeholder="Enter your store username"
-                required
               />
+              {errors.username && (
+                <p className="text-red-500 text-sm mt-1">{errors.username}</p>
+              )}
             </div>
+
+            {/* Password */}
             <div>
               <input
                 type="password"
+                name="password"
                 className="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-1 focus:ring-blue-300 focus:outline-none"
                 placeholder="Create a password"
-                required
               />
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+              )}
             </div>
+
             <button
               type="submit"
               className="w-full px-4 mt-5 py-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 flex items-center justify-center"
@@ -70,13 +132,13 @@ const SignUp = () => {
             </button>
           </form>
 
+          {/* OR + social buttons */}
           <div>
             <div className="flex items-center my-6">
               <div className="flex-grow border-t border-blue-500"></div>
               <span className="mx-4 text-blue-500 font-medium">OR</span>
               <div className="flex-grow border-t border-blue-500"></div>
             </div>
-
             <div className="flex justify-center gap-6">
               <button className="p-3 border border-blue-500 rounded-full hover:bg-gray-100 transition text-2xl">
                 <FcGoogle />
